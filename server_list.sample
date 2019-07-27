@@ -1,0 +1,3 @@
+# Put this file to ${HOME}/.aws/server_list
+# Name  Region   Username    Instance-ID
+foobar  us-east-1   ec2-user    i-xxxxxxxxxxxxx
