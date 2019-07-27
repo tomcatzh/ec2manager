@@ -1,0 +1,20 @@
+{
+    "schemaVersion": "1.0",
+    "description": "Su to specified user",
+    "sessionType": "InteractiveCommands",
+    "parameters": {
+      "username": {
+        "type": "String",
+        "description": "The username for su",
+        "allowedPattern": "^[a-zA-Z0-9\\_.@-]*$",
+        "minChars": 1,
+        "maxChars": 256
+      }
+    },
+    "properties": {
+      "linux": {
+        "commands": "sudo su - {{username}}",
+        "runAsElevated": true
+      }
+    }
+  }

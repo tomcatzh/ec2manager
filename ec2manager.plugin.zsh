@@ -14,7 +14,7 @@ function conn () {
 
     if [ $found = 1 ]; then
         echo "Connecting to ${id} at ${region}"
-        ssh -A -o ProxyCommand="aws ssm start-session --region ${region} --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'" ${user}@${id}
+        aws ssm start-session --region ${region} --target ${id} --document-name SSMSuUser --parameters "username=\"${user}\""
         return 0;
     else
         echo "Server not found!"
